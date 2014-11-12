@@ -1,0 +1,23 @@
+---
+
+- name: Ensure the key path exists
+  file:
+    path={{deploy_key_client_key_path}}
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+
+- name: Install deployment key.
+  copy:
+    src={{deploy_key_assets_path}}/{{deploy_key_name}}
+    dest={{deploy_key_client_key_path}}/{{deploy_key_name}}
+    mode=600
+
+- name: Strip passphrase from key.
+  shell: ssh-keygen -p -P '{{ssh_key_passphrase}}' -N '' -f {{deploy_key_client_key_path}}/{{deploy_key_name}}
+
+
+- name: Add deployment key configuration for ssh
+  ssh_config: host=projektit.kirjastot.fi hostname=projektit.kirjastot.fi
+              identity_file={{deploy_key_client_key_path}}/{{deploy_key_name}} state=present
