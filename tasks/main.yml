@@ -19,5 +19,5 @@
 
 
 - name: Add deployment key configuration for ssh
-  ssh_config: host=projektit.kirjastot.fi hostname=projektit.kirjastot.fi
+  ssh_config: host=projektit.kirjastot.fi hostname=projektit.kirjastot.fi user=root
               identity_file={{deploy_key_client_key_path}}/{{deploy_key_name}} state=present
