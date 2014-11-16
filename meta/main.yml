@@ -1,2 +1,3 @@
 dependencies:
   - ajsalminen.deploy_key
+  - ajsalminen.ssh_config
