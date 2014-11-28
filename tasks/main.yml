@@ -16,10 +16,3 @@
 
 - name: Strip passphrase from key.
   shell: ssh-keygen -p -P '{{ssh_key_passphrase}}' -N '' -f {{deploy_key_client_key_path}}/{{deploy_key_name}}
-
-- name: Add deployment key configuration for ssh.
-  template:
-    src: ssh_config_host.j2
-    dest: "{{ ssh_config_fragment_path }}/50_deploy_key_client_host"
-  notify:
-    - Assemble ssh_config from fragments.

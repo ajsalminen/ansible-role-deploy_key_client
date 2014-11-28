@@ -1,3 +1,7 @@
 dependencies:
   - ajsalminen.deploy_key
-  - ajsalminen.ssh_config
+  - role: ajsalminen.ssh_config
+    ssh_config_hosts:
+      - host: "{{ deploy_key_client_hostname }}"
+        hostname: "{{ deploy_key_client_hostname }}"
+        key_path: "{{deploy_key_client_key_path}}/{{deploy_key_name}}"
