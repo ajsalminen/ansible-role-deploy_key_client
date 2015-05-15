@@ -1,2 +1,4 @@
 ---
-deploy_key_client_key_path: /root/.ssh
+deploy_key_client_user: root
+deploy_key_client_group: root
+deploy_key_client_key_path: /{{deploy_key_client_user}}/.ssh

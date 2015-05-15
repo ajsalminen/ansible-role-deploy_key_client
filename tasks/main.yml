@@ -4,8 +4,8 @@
   file:
     path={{deploy_key_client_key_path}}
     state=directory
-    owner=root
-    group=root
+    owner={{deploy_key_client_user}}
+    group={{deploy_key_client_group}}
     mode=0755
 
 - name: Install deployment key.
