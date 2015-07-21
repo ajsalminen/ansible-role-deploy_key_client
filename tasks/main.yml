@@ -12,6 +12,8 @@
   copy:
     src={{deploy_key_assets_path}}/{{deploy_key_name}}
     dest={{deploy_key_client_key_path}}/{{deploy_key_name}}
+    owner={{deploy_key_client_user}}
+    group={{deploy_key_client_group}}
     mode=600
 
 - name: Strip passphrase from key.
