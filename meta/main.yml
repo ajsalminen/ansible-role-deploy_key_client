@@ -5,6 +5,7 @@ dependencies:
     ssh_config_hosts:
       - host: "{{ deploy_key_client_hostname }}"
         hostname: "{{ deploy_key_client_hostname }}"
+        name: "{{ deploy_key_client_name|default(deploy_key_client_hostname) }}"
         key_path: "{{deploy_key_client_key_path}}/{{deploy_key_name}}"
     ssh_config_user: "{{ deploy_key_client_user }}"
     ssh_config_group: "{{ deploy_key_client_group }}"
