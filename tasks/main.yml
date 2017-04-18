@@ -6,7 +6,7 @@
     state=directory
     owner={{deploy_key_client_user}}
     group={{deploy_key_client_group}}
-    mode=0755
+    mode=0700
 
 - name: Install deployment key.
   copy:
